@@ -1,0 +1,106 @@
+* {
+    color: rgb(104, 104, 104);
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 40px;
+
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    background-color: #90CE9C;
+    padding: 40px;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    text-align: center;
+}
+
+th,td {
+    padding: 10px;
+}
+
+#selectfunds {
+    align-items: center;
+    width: auto;
+    margin: 10px auto;
+    padding: .8em 3.2em;
+    background-color: #fff;
+    border:2px solid #90ce9c;
+    border-radius: 30px;
+    color: #90ce9c;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#selectfunds:hover {
+    transform: scale(1.05);
+}
+
+input {
+    width: 150px;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px 0px 5px 20px;
+    border-radius: 10px;
+    border-color: rgba(175, 175, 175, 0.63);
+}
+
+input:focus {
+    border-color: #90CE9C;
+    outline: 0;
+}
+
+#lifeEventsButton {
+    color: #90CE9C;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #90CE9C;
+    cursor: pointer;
+}
+
+#lifeEventsButton:hover {
+    transform: scale(1.05);
+}
+
+.lifeEvents, .detailSettings {
+    display: none;
+}
+
+#detail {
+    color: #90CE9C;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #90CE9C;
+    cursor: pointer;
+}
+
+#detail:hover {
+    transform: scale(1.05);
+}
+
+.display {
+    display: table-row;
+}
+
+#start {
+    color: white;
+    background-color: #90CE9C;
+    padding: 20px 30px;
+    border-radius: 50px;
+    width: 70%;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons {
+    text-align: center;
+    margin: 30px 0px 0px 20px;
+}
