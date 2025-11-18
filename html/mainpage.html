@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <title>システム表示画面</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="front.css">
+
+    
+</head>
+
+<body>
+
+    <h1>新NISA資産形成シミュレーション</h1>
+
+    <br>
+    <button id="selectfunds">金融商品選択  >&emsp;</button> <a href="file:///C:/Users/axxdz/Documents/%E8%AA%B2%E9%A1%8C/%E3%82%BC%E3%83%9F/%E5%8D%92%E8%AB%96/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/About%20Select%20Funds.html">？</a>
+    <br><br>
+    
+
+    <table>
+        <tr>
+            <th>期待収益率</th>
+            <th><input id="textfield1" type="number"> %</th>
+            <th>&emsp;ボラティリティ</th>
+            <th><input id="textfield2" type="number"> %</th>
+        </tr>
+
+        <tr>
+            <th colspan="2"style="text-align: right"><label>シミュレーション開始年齢</label></th>
+            <th>&emsp;<input id="textfield3" type="number"> 歳</th>
+        </tr>
+        <tr>
+            <th colspan="2"style="text-align: right"><label>つみたて月額</label></th>
+            <th>&emsp;<input id="textfield4" type="number"> 万</th>
+        </tr>
+        <tr>
+            <th colspan="2"style="text-align: right"><label>つみたて額初期値</label></th>
+            <th>&emsp;<input id="textfield5" type="number"> 万</th>
+        </tr>
+    </table>
+
+    <div class="buttons">
+        <button id="lifeEventsButton"> + ライフイベントを追加</button>
+    </div>
+
+    <table>
+        <tr class="lifeEvents">
+            <th style="text-align: right">ライフイベント 1</th>
+            <td><input type="text" placeholder="結婚"></td>
+            <th style="text-align: right"> &emsp;&emsp;年齢 </th>
+            <td><input id="textfield6(1)" type="number" placeholder="30"> </td>
+            <th style="text-align: right"> &emsp;&emsp;必要資金(万) </th>
+            <td><input id="textfield6(2)" type="number" placeholder="327"> </td>
+        </tr>
+
+        <tr class="lifeEvents">
+            <th style="text-align: right"> ライフイベント 2</th>
+            <td><input type="text" placeholder="住宅購入"></td>
+            <th style="text-align: right"> &emsp;&emsp;年齢 </th>
+            <td><input id="textfield7(1)" type="number" placeholder="30"> </td>
+            <th style="text-align: right"> &emsp;&emsp;必要資金(万) </th>
+            <td><input id="textfield7(2)" type="number" placeholder="3719"> </td>
+        </tr>
+
+        <tr class="lifeEvents">
+            <th style="text-align: right"> ライフイベント 3</th>
+            <td><input type="text" placeholder="出産"></td>
+            <th style="text-align: right"> &emsp;&emsp;年齢 </th>
+            <td><input id="textfield8(1)" type="number" placeholder="33"> </td>
+            <th style="text-align: right"> &emsp;&emsp;必要資金(万) </th>
+            <td><input id="textfield8(2)" type="number" placeholder="48"> </td>
+        </tr>
+
+        <tr class="lifeEvents">
+            <th style="text-align: right"> ライフイベント 4</th>
+            <td><input type="text" placeholder="教育費1"></td>
+            <th style="text-align: right"> &emsp;&emsp;年齢 </th>
+            <td><input id="textfield9(1)" type="number" placeholder="40"> </td>
+            <th style="text-align: right"> &emsp;&emsp;必要資金(万) </th>
+            <td><input id="textfield9(2)" type="number" placeholder="100"> </td>
+        </tr>
+
+        <tr class="lifeEvents">
+            <th style="text-align: right"> ライフイベント 5</th>
+            <td><input type="text" placeholder="教育費2"></td>
+            <th style="text-align: right"> &emsp;&emsp;年齢 </th>
+            <td><input id="textfield10(1)" type="number" placeholder="50"> </td>
+            <th style="text-align: right"> &emsp;&emsp;必要資金(万) </th>
+            <td><input id="textfield10(2)" type="number" placeholder="200"> </td>
+        </tr>
+    </table>
+
+    <div class="buttons">
+        <button id="detail">+ 詳細設定を追加</button>
+    </div>
+
+    <table>
+        <tr class="detailSettings">
+            <th colspan="2" style="text-align: right">年変化</th>
+            <th>つみたて月額を
+                <select id="changebyanyear">
+                <option value="1">1年</option>
+                <option value="3">3年</option>
+                <option value="5">5年</option>
+                </select>ごとに
+                <input id="textfield11" type="number"> 万円増やす
+            </th>
+        </tr>
+
+        <tr class="detailSettings">
+            <th colspan="2" style="text-align: right">シミュレーション終了年齢</th>
+            <th><input id="textfield12" type="number" placeholder="60"> 歳</th>
+        </tr>
+    </table>
+
+    <div class="buttons">
+        <button id="start">シミュレーション開始</button>
+    </div>
+
+    <hr>
+
+     <p>※当該評価は過去の一定期間の実績の分析結果を元に予測したものであり、 将来の運用成果等を保証したものではありません。</p>
+
+
+
+
+
+
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // ----- ライフイベント -----
+            document.getElementById("lifeEventsButton").addEventListener("click", function() {
+                const items = document.querySelectorAll(".lifeEvents");
+                items.forEach(el => el.classList.toggle("display"));
+            });
+
+            // ----- 詳細設定 -----
+            document.getElementById("detail").addEventListener("click", function() {
+                const items = document.querySelectorAll(".detailSettings");
+                items.forEach(el => el.classList.toggle("display"));
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
