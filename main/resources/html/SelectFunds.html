@@ -1,92 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
 <html>
 
     <head>
         <title>商品選択</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="Select Funds.css">
+        <link rel="stylesheet" href="SelectFunds.css">
 
     </head>
 
     <body>
-        <div>
-            <h2> つみたてNISA対象商品 </h2>
-            <h3> ファンド </h3>
-            <br>
-
-            <table>
-                <thead>
-                    <tr>
-                    <th>ファンド名称</th>
-                    <th  class="returnWidth">期待収益率</th>
-                    <th class="volaWidth">ボラティリティ</th>
-                    <th class="companyWidth">運用会社</th>
-                    <th class="detailWidth">詳細</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" id="mitsui_dc" name="productName" value="mitsui_dc"/>
-                                <label for="mitsui_dc">三井住友・DCつみたてNISA・日本株インデックスファンド</label> </td>
-                        <td>19.117%</td>
-                        <td>8.677%</td>
-                        <td class="company"> 三井住友DSアセットマネジメント株式会社</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" id="mitsubishi_emaxis" name="productName" value="mitsubishi_emaxis"/>
-                                <label for="mitsubishi_emaxis">eMAIXISバランス(8資産均等型)</label> </td>
-                        <td>9.564%</td>
-                        <td>10.639%</td>
-                        <td class="company">三菱UFJアセットマネジメント株式会社</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" id="nomura_nomu" name="productName" value="nomura_nomu"/>
-                                <label for="nomura_nomu">のむラップ・ファンド(積極型)</label> </td>
-                        <td>10.852%</td>
-                        <td>14.521%</td>
-                        <td class="company"> 野村アセットマネジメント株式会社</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" id="mitsui_smtam" name="productName" value="mitsui_smtam"/>
-                                <label for="mitsui_smtam">SMTAMダウ・ジョーンズ インデックスファンド</label> </td>
-                        <td>17.167%</td>
-                        <td>20.659%</td>
-                        <td class="company"> 三井住友トラストアセットマネジメント株式会社</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" id="amova_s&p500" name="productName" value="amova_s&p500"/>
-                                <label for="amova_s&p500">上場インデックスファンド米国株式(S&P500)</label> </td>
-                        <td>18.553%</td>
-                        <td>21.038%</td>
-                        <td class="company"> アモーヴァ・アセットマネジメント株式会社</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" id="daiwa_iFree" name="productName" value="daiwa_iFree"/>
-                                <label for="daiwa_iFree">iFreeETF JPX 日経400</label> </td>
-                        <td>11.003%</td>
-                        <td>18.989%</td>
-                        <td class="company">大和アセットマネジメント株式会社</td>
-                        <td></td>
-                    </tr>
-                </tbody>
+        <div th:fragment="productSelection_body">
+            <div class="productSelection">
+                <h2> つみたてNISA対象商品 </h2>
                 
-
-
-            </table>
+                <table>
+                    <thead>
+                        <tr>
+                        <th>ファンド名称</th>
+                        <th  class="returnWidth">期待収益率</th>
+                        <th class="volaWidth">ボラティリティ</th>
+                        <th class="companyWidth">運用会社</th>
+                        <th class="detailWidth">詳細</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="mitsui_dc" name="productName" value="mitsui_dc"/><label for="mitsui_dc">三井住友・DCつみたてNISA・日本株インデックスファンド</label> </td>
+                            <td>19.117%</td>
+                            <td>8.677%</td>
+                            <td> 三井住友DSアセットマネジメント株式会社</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="mitsubishi_emaxis" name="productName" value="mitsubishi_emaxis"/><label for="mitsubishi_emaxis">eMAIXISバランス(8資産均等型)</label> </td>
+                            <td>9.564%</td>
+                            <td>10.639%</td>
+                            <td>三菱UFJアセットマネジメント株式会社</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="nomura_nomu" name="productName" value="nomura_nomu"/><label for="nomura_nomu">のむラップ・ファンド(積極型)</label> </td>
+                            <td>10.852%</td>
+                            <td>14.521%</td>
+                            <td> 野村アセットマネジメント株式会社</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="mitsui_smtam" name="productName" value="mitsui_smtam"/><label for="mitsui_smtam">SMTAMダウ・ジョーンズ インデックスファンド</label> </td>
+                            <td>17.167%</td>
+                            <td>20.659%</td>
+                            <td> 三井住友トラストアセットマネジメント株式会社</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="amova_s&p500" name="productName" value="amova_s&p500"/><label for="amova_s&p500">上場インデックスファンド米国株式(S&P500)</label> </td>
+                            <td>18.553%</td>
+                            <td>21.038%</td>
+                            <td> アモーヴァ・アセットマネジメント株式会社</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="daiwa_iFree" name="productName" value="daiwa_iFree"/><label for="daiwa_iFree">iFreeETF JPX 日経400</label> </td>
+                            <td>11.003%</td>
+                            <td>18.989%</td>
+                            <td>大和アセットマネジメント株式会社</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 
